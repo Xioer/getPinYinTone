@@ -1,6 +1,6 @@
 {
     "name": "xioer/pinyin",
-    "description": "获取音调",
+    "description": "拼音",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -10,8 +10,10 @@
     },
     "authors": [
         {
-            "name": "Li DanYang"
+            "name": "Li Dan Yang",
+            "email": "LiDanYang@qq.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {}
 }
