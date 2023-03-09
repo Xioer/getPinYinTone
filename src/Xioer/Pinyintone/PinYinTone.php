@@ -12,32 +12,33 @@ class PinyinTone{
         'v' => ['ü','ǖ','ǘ','ǚ','ǜ']
     ];
 
-    // $str = 'mian4 chao2 da4 hai3 ying2 zhe0 zhao1 yang2';
-    // $arr = explode(' ', $str);
-    // $msg = "";
-    // foreach($arr as &$value){
-    //     $msg.=getPinYin($value).' ';
-    // }
-    // echo $msg;
-    
+    public function getPinYin($str)
+    {
+        $arr = explode(' ', $str);
+        $msg = "";
+        foreach($arr as &$value){
+            $msg.= $this->get_pin_yin($value).' ';
+        }
+        return $msg;
+    }
 
     /**没有a 找oe iuv并列标最后 */
-    public function getPinYin($str){
-        global $pinyin;
+    private function get_pin_yin($str){
+        // global $pinyin;
         $last = intval(substr($str,-1));
-        // print_r($last);exit;
+        // print_r($str);exit;
         
         if(strstr($str,'a')){
-            $replace_char = $pinyin['a'][$last];
+            $replace_char = $this->pinyin['a'][$last];
             // print_r($replace_char);exit;
             $str = str_replace('a',$replace_char,$str);
             $str = substr($str,0,strlen($str)-1);
         }elseif(strstr($str,'o')){
-            $replace_char = $pinyin['o'][$last];
+            $replace_char = $this->pinyin['o'][$last];
             $str = str_replace('o',$replace_char,$str);
             $str = substr($str,0,strlen($str)-1);
         }elseif(strstr($str,'e')){
-            $replace_char = $pinyin['e'][$last];
+            $replace_char = $this->pinyin['e'][$last];
             $str = str_replace('e',$replace_char,$str);
             $str = substr($str,0,strlen($str)-1);
         }else{
@@ -50,7 +51,7 @@ class PinyinTone{
                 if(strpos($iuv,$v) !== false){
                     //找到第一个包含iuv的字符并且替换
                     $str = substr($str,0,strlen($str)-1);
-                    $replace_char = $pinyin[$v][$last];
+                    $replace_char = $this->pinyin[$v][$last];
                     $str = str_replace($v,$replace_char,$str);
                     break;
                 }
