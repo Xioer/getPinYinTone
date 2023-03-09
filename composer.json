@@ -1,21 +1,17 @@
 {
-    "name": "xioer/pinyintone",
-    "description": "使用拼音获取拼音对应的声调",
+    "name": "xioer/pinyin",
+    "description": "获取音调",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Xioer\\Pinyintone\\": "src/Xioer/Pinyintone"
+            "Xioer\\Pinyin\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Li Day",
-            "email": "191685963@qq.com"
+            "name": "Li DanYang"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {
-        "php":">=5.6"
-    }
+    "require": {}
 }
