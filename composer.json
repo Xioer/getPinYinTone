@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Xioer\\Pinyintone\\": "src/PinyinTone/Library"
+            "Xioer\\Pinyintone\\": "src/Xioer/Pinyintone"
         }
     },
     "authors": [
